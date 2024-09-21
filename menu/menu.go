@@ -34,3 +34,8 @@ func ClearTerminal() {
 	clearCMD.Stdout = os.Stdout
 	clearCMD.Run()
 }
+
+func Continue() {
+	fmt.Print("Press enter to continue...")
+	fmt.Scanln()
+}

@@ -22,42 +22,35 @@ func main() {
 			fmt.Scanln(&todo)
 			list.InsertTodo(todo)
 			fmt.Printf("Todo %s has been added\n\n", todo)
-			fmt.Print("Press enter to continue...")
-			fmt.Scanln()
+			menu.Continue()
 
 		case "2": // Menampilkan daftar todos
 			if !list.ShowList() {
-				fmt.Print("Press enter to continue...")
-				fmt.Scanln()
+				menu.Continue()
 			} else {
-				fmt.Print("\nPress enter to continue...")
-				fmt.Scanln()
+				menu.Continue()
 			}
 			
 		case "3": // Menyelesaikan todo berdasarkan nomor
 			if !list.ShowList() {
-				fmt.Print("Press enter to continue...")
-				fmt.Scanln()
+				menu.Continue()
 			} else {
-				fmt.Print("\nInput number of todo to complete: ")
+				fmt.Print("Input number of todo to complete: ")
 				var number int
 				fmt.Scanln(&number)
 				list.CompleteTodo(number)
-				fmt.Print("Press enter to continue...")
-				fmt.Scanln()
+				menu.Continue()
 			}
 
 		case "4": // Menghapus todo berdasarkan nomor
 			if !list.ShowList() {
-				fmt.Print("Press enter to continue...")
-				fmt.Scanln()
+				menu.Continue()
 			} else {
-				fmt.Print("\nInput number of todo to delete: ")
+				fmt.Print("Input number of todo to delete: ")
 				var number int
 				fmt.Scanln(&number)
 				list.DeleteTodo(number)
-				fmt.Print("Press enter to continue...")
-				fmt.Scanln()
+				menu.Continue()
 			}
 
 		case "5": // Keluar dari program
@@ -66,8 +59,7 @@ func main() {
 
 		default: // Jika input tidak valid
 			fmt.Println("Invalid input. Please try again.")
-			fmt.Print("Press enter to continue...")
-			fmt.Scanln()
+			menu.Continue()
 		}
 	}
 }

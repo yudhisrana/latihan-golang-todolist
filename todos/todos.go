@@ -27,9 +27,10 @@ func (t *TodoList) ShowList() bool {
 		return false
 	} else {
 		for _, todo := range t.List {
-			fmt.Printf("No.%d - Todo : %s - Is Complete : %t\n", todo.Number, todo.Content, todo.IsComplete)
+			fmt.Println("No.", todo.Number, "-", "Todo:", todo.Content, "-", "Status:", todo.IsComplete,)	
 		}
 	}
+	fmt.Println("")
 	return true
 }
 
